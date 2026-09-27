@@ -32,14 +32,73 @@ Combine headings when that reads better, but retain the answers. Add badges,
 screenshots, contribution instructions, status notes, and sponsor links only
 when relevant and supported by real content; never add empty placeholders.
 
-## Other documentation and notes
+## Other documentation
 
 Write for a clear audience and purpose. Prefer a short explanation and links to
-existing authoritative material over repeated facts that can drift. For
-project definition or progress, follow `project-context` instead of turning a
-README or guide into a second source of project state. Use only an explicitly
-configured vault location; preserve the note's existing organization when
-editing it.
+authoritative material over repeated facts that can drift. Follow
+`project-context` for project definition and progress.
+
+## Vault notes
+
+The configured vault is `~/vaults/default`. Work only within that vault, and
+only on requested notes. Leave vault configuration, Git metadata, and attachments
+alone unless separately authorized.
+
+Before creating a note, inspect relevant existing category pages and the
+matching template in `templates/`. Adapt the template to the requested note,
+fill `{{title}}` and `{{date}}`, and write valid frontmatter—never leave
+template placeholders in a finished note.
+
+If a developed note has no suitable existing category, consider whether its
+subject is a reusable area likely to connect multiple notes. If so, propose a
+plain-named category before writing the note: explain its scope and how it
+relates to existing categories. Wait for the user's choice. If approved, create
+a category page with meaningful scope text, then write the note and its links.
+If declined, use another category only when accurate; otherwise write the note
+without a category link. Do not interrupt quick inbox or daily captures with
+category proposals, or create a category for each product or one-off idea.
+
+- `inbox/`: quick, possibly unfinished thoughts and captures.
+- `notes/`: developed notes, including project notes.
+- `categories/`: curated category pages, one folder level; use links between
+  categories rather than nested directories.
+- `daily/`: requested entries named `YYYY-MM-DD.md`.
+- `templates/` and `assets/`: supporting files, not ordinary note destinations.
+
+Name new `inbox/` and `notes/` files `YYYY-MM-DD-HHMMSS-<slug>.md`, using local
+time. Form the slug from the trimmed title: lowercase it; replace control
+characters and `< > : " / \ | ? *` with `-`; replace whitespace and underscores
+with `-`; collapse repeated hyphens; and trim leading or trailing periods, hyphens,
+and spaces. Use `untitled` if nothing remains. If that filename exists in the same
+directory, append `-2`, `-3`, and so on before `.md` until unique.
+
+Give category pages readable, plain-name filenames. Daily filenames remain
+`YYYY-MM-DD.md`. Create a missing directory only when its first requested note
+needs it.
+
+New notes use simple YAML frontmatter: `aliases`, `tags`, and `created`.
+Do not add `type`. Keep `created` unchanged on later edits. Use aliases for
+human-readable links to timestamp-named notes. Use tags for cross-cutting
+context or workflow state; use `[[links]]` to connect notes to category pages
+and category pages to each other. Do not manufacture empty category pages.
+
+Before creating a note, look for the same title or alias and relevant existing
+notes. Preserve existing structure when editing. Pi may review and suggest
+connections or further structure in both `inbox/` and `notes/`, but moving,
+renaming, merging, or deleting notes requires a separate request; Neovim does
+not currently auto-update links after a rename.
+
+Project notes should contain a curated summary, selected decisions and lessons,
+and dated meaningful status or milestone updates, with links to authoritative
+repository documents. Do not mirror project documentation or update the vault
+automatically after every project change.
+
+After a consequential decision or reusable insight, Pi may briefly suggest a
+note title, destination, and reason. A suggestion is not permission to write.
+Requested edits follow write-then-review: report changed paths for Neovim
+review. Pi never initiates vault Git actions. Neovim's automatic vault sync is
+not yet reconciled with review-before-publication; warn about that limitation
+rather than claiming a note cannot be published before review.
 
 After requested documentation edits, name the changed paths and what remains
 uncertain so the user can review the actual result in their editor. Writing a
