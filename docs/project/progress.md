@@ -7,33 +7,32 @@ status: active
 
 ## Current State
 
-- **Phase:** Project documentation and architecture review.
-- **Definition:** Draft; updated with the agreed main-agent working style and
-  source, documentation, vault, and Git boundaries; awaiting user acceptance.
-- **Implementation:** No Pi Kijun configuration, skills, extensions, or tests
-  have been created. Git is initialized on `main` with no commits or remote.
-- **Project context:** A concise definition and this progress file have been
-  drafted. The earlier decision register remains as historical material pending
-  review and retirement; the new definition governs the current proposal.
-- **Architecture:** `docs/architecture-draft.md` is a temporary discussion aid,
-  now proposing a source tree that mirrors selected paths under `~/.pi/agent/`
-  and `~/.agents/skills/`; it is not an adopted file inventory.
+- **Phase:** Live workflow evaluation.
+- **Definition:** Accepted; records the working style and change boundaries.
+- **Implementation:** The global contract and four on-demand skills are linked
+  into live Pi through `setup.sh`; all five symlink targets were verified. The
+  user restarted Pi and reports that it loaded them. Earlier disposable checks
+  covered skill discovery, behavioural boundaries, Git merge/tag handling,
+  and setup collisions; the model-dependent runner remains local, not shipped.
+  These checks do not establish enforcement. No extensions are installed for
+  Kijun. Git is on `first-version` with no remote.
+- **Project context:** The two-file definition and progress model is in place;
+  stable scope and rationale belong in `definition.md`.
+- **Repository guide:** `README.md` explains purpose, setup, use, and document
+  links. The repository has an MIT `LICENSE` file.
 
 ## Open Questions
 
-- Which, if any, existing permission extension meets the desired per-change and
-  session source-edit approval semantics across all relevant tools and modes?
-- Which material project-definition changes need explicit user acceptance
-  before further work proceeds? For now, always report changed paths, offer a
-  diff, and do not treat unreviewed material scope changes as settled.
-- Which Mentor Git conventions still reflect the user's current standards?
-  Specify them before implementing mutating Git guidance.
-- Which individual resources should be linked into Pi, and how should linkage
-  be tested without replacing the existing local settings or runtime data?
+- Permission extensions are deferred unless real use shows a need. The
+  preliminary review found no verified match for narrow, revocable grants;
+  behavioural guidance and human review are not technical enforcement.
+- Live resource loading is user-confirmed. This documentation update exercises
+  the live write-then-review path; manual-first source work still needs a normal
+  live trial. The existing local `0.1.0` tag points to the bootstrap commit,
+  so any future default-branch merge needs a different user-chosen version.
 
 ## Next Action
 
-Review the updated definition and temporary architecture, particularly the
-proposed source-to-user-path mapping. Revise them based on feedback, then retire
-the historical decision register once its still useful context is captured.
-Only then start configuration or extension work.
+Try a low-risk manual-first source request in live Pi and review its response.
+If the workflow feels right, decide whether to prepare a release; publishing
+would also require an agreed remote and an unused version.
