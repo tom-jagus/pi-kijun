@@ -1,6 +1,6 @@
 ---
 name: development
-description: Work on source code, tests, scripts, configuration, or other implementation files. Use for implementation, debugging, source review, and validation, including manual-first change proposals and source edits explicitly authorized for Pi. Do not load for documentation-only or Git-only requests.
+description: Implement or debug source code, tests, scripts, configuration, and other implementation files. Use for a selected slice or bounded source request, including manual-first proposals and explicitly authorized edits. Use review for acceptance assessment; development does not accept its own delivery.
 ---
 
 # Development
@@ -20,7 +20,7 @@ mutations.
 - Diagnose before prescribing. Challenge unnecessary complexity, explain
   important trade-offs, and choose a bounded implementation unit. Routine
   design and debugging stay in Development; refer a genuine change to accepted
-  project meaning to project-context instead of silently redefining scope.
+  project meaning to `brainstorming` instead of silently redefining scope.
 - Determine the editing mode **before** a source-writing tool call. The default
   is proposal-only, even if the user asks to implement or fix something. Without
   Pi-edit authority, follow the manual-first path and give a usable proposal;
@@ -29,6 +29,21 @@ mutations.
   grant covering this project and work. If an offered grant's scope or status
   is unclear, ask before editing. A grant for one change does not authorize
   the next; source authority does not authorize Git operations.
+
+## Working from a slice
+
+When a work item is selected, load `work-items` and read the slice, its relevant
+brief, criteria, dependencies, and blocker. Do not implement Draft work or start
+blocked work. If the outcome or criteria are unsettled, identify the gap and
+hand off to `refinement` only when the request covers it. Do not rewrite the
+criteria to make implementation convenient.
+
+A bounded source request without project records can proceed normally; do not
+manufacture a brief, slice, or charter as a prerequisite. When record maintenance
+is included, move a started slice to In progress and keep the index consistent.
+One selected slice has one accountable worker. Do not launch agents or create
+branches/worktrees without explicit authority; worker permissions must be
+stated rather than inherited from this session.
 
 ## Manual-first path
 
@@ -70,3 +85,11 @@ edit authority. Report tests performed, tests not performed, failures, and
 remaining uncertainty accurately. Suggest documentation updates only when they
 would preserve meaningful context. Never stage, commit, or publish just because
 an implementation unit is done.
+
+For tracked work, update only useful task progress and concise verification
+evidence when record maintenance is in scope. A proposal awaiting manual entry
+is not an implemented result. Move delivered work to Review, not Done; use
+`review` for acceptance assessment. Do not silently begin the next slice, add
+follow-up slices, expand the brief, or generate a development diary. Hand gaps
+to refinement and leave acceptance criteria unchanged unless the user accepts
+a proposed change.

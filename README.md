@@ -13,13 +13,15 @@ Kijun. When ready for a live trial, run this from the repository root:
 ./setup.sh
 ```
 
-The script links Kijun's `AGENTS.md` and four skills into
+The script links Kijun's `AGENTS.md` and nine skills into
 `${PI_CODING_AGENT_DIR:-$HOME/.pi/agent}`. It skips links already applied and
 refuses collisions or duplicate skill names under `~/.agents/skills/`.
-Existing settings, credentials, packages, and sessions are left alone.
-Restart Pi (or use `/reload`) to discover the resources. To roll back, inspect
-and remove only the five symlinks pointing to this checkout; `setup.sh` does
-not remove links.
+Existing settings, credentials, packages, and sessions are left alone. An
+independently installed skill with the same name, including `unslop`, is a
+collision; inspect and resolve it yourself before rerunning setup.
+Restart Pi or use `/reload` to discover the resources. To roll back, inspect
+and remove only the symlinks pointing to this checkout; `setup.sh` does not
+remove links.
 
 ## Usage
 
@@ -29,12 +31,21 @@ requested documentation for your review, and perform Git mutations only when
 specifically asked. Relevant skills supply guidance on demand; no special
 command is required.
 
+Brainstorming develops the project charter and briefs. Refinement prepares
+slices and task checklists. Development implements selected work, and review
+checks the result against acceptance criteria. Shared work-item guidance keeps
+`docs/project/charter.md`, `docs/project/work.md`, and individual item files
+consistent without a separate progress diary.
+
 ## Documentation
 
-- [Project definition](docs/project/definition.md) — scope, change boundaries,
-  and Git standards.
-- [Project progress](docs/project/progress.md) — current development state and
-  next action.
+- [Project charter](docs/project/charter.md) explains the problem, value, success,
+  and boundaries.
+- [Current work](docs/project/work.md) lists open briefs and slices.
+- [Workflow guide](docs/workflow.md) explains activities, records, acceptance,
+  concurrency boundaries, and checks.
+- [Operating contract](pi/agent/AGENTS.md) and
+  [Git skill](pi/agent/skills/git/SKILL.md) define change authority and Git rules.
 
 ## License
 

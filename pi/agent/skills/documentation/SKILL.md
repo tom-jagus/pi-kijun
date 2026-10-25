@@ -1,6 +1,6 @@
 ---
 name: documentation
-description: Write or revise a project's README, user-facing guides, reference docs, or notes in an explicitly configured vault. Use for README.md and ordinary documentation work. For docs/project/definition.md or docs/project/progress.md, use project-context instead.
+description: Write or revise a project's README, user-facing guides, reference docs, or notes in an explicitly configured vault. Use for ordinary documentation, not project work-item management. Use brainstorming for charter or brief content and work-items with the relevant activity for project records.
 ---
 
 # Documentation
@@ -36,7 +36,9 @@ when relevant and supported by real content; never add empty placeholders.
 
 Write for a clear audience and purpose. Prefer a short explanation and links to
 authoritative material over repeated facts that can drift. Follow
-`project-context` for project definition and progress.
+`brainstorming` for charter and brief outcomes, and `work-items` alongside the
+relevant activity for files under `docs/project/`. Do not turn activity results
+into additional guides or parallel progress reports.
 
 ## Vault notes
 

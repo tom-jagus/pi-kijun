@@ -18,10 +18,15 @@ agent_dir="${PI_CODING_AGENT_DIR:-$HOME/.pi/agent}"
 
 resources=(
   AGENTS.md
-  skills/project-context
+  skills/brainstorming
+  skills/refinement
   skills/development
+  skills/review
+  skills/work-items
+  skills/project-context
   skills/documentation
   skills/git
+  skills/unslop
 )
 
 present() { [[ -e "$1" || -L "$1" ]]; }
