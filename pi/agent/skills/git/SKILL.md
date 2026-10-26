@@ -6,75 +6,83 @@ description: Perform a specifically requested Git or GitHub action under the use
 # Git
 
 Git mutations require a specific request. Follow the global operating contract
-and any applicable project instructions. This skill describes behaviour; it is
-not a permission gate. Read-only Git inspection does not imply permission to
-stage, commit, push, or publish.
+and applicable project instructions. Read-only inspection is allowed; this
+skill is behavioural guidance, not a technical permission gate.
 
 ## Before acting
 
-- Identify the **requested outcome** and stop at its boundary. A commit does
-  not authorize a push or PR; a push does not authorize a PR; creating a PR
-  does not authorize merging it. A source-edit grant authorizes none of these.
-- Inspect branch, HEAD, working tree, staged and unstaged changes, and relevant
-  project policy. Respect unrelated user changes. Check conflicts, in-progress
-  Git operations, and validation appropriate to the change. Do not run an
-  auto-fix or source generator through Git validation without source-edit
+- Identify the requested outcome and stop at its boundary. A commit does not
+  authorize a push or PR; a push does not authorize a PR; creating a PR does not
+  authorize merging it. Source-edit and acceptance authority grant none of these.
+- Inspect branch, HEAD, working tree, staged and unstaged changes, and project
+  policy. Preserve unrelated changes. Check conflicts, in-progress operations,
+  and relevant validation. Do not run source-changing checks without edit
   authority.
-- Use the configured default branch (`main` if unspecified). If the action's
-  files, remote, destination, PR, version, or consequences are ambiguous, ask
-  only for what is missing. No arbitrary force, protected-branch rewrite, tag
-  replacement, or bypass of repository protections.
+- Use the configured default branch, `main` if unspecified. For commits or
+  pushes to that branch, require the destination to be explicit in the request
+  or confirmed before acting. "Commit this" while on `main` requires asking;
+  "commit this on main" already supplies confirmation. Check the actual push
+  destination, not just the local branch name.
+- Read project instructions for whether the project is personal or
+  client/collaborative. Do not infer this from repository visibility. Ask when
+  the distinction affects the requested action and is not established.
+- Clarify missing files, remote, destination, PR, version, or consequences.
+  Never force-push the protected default branch, replace tags, or bypass
+  repository protections.
 
-## Local branches and commits
+## Branches and commits
 
-- When asked to start work, prefer a small, descriptive
-  `<type>/<kebab-case-work>` branch; `feat/`, `bugfix/`, and `chore/` are
-  examples, not an exhaustive allowlist. Do not switch branches merely because
-  implementation begins. Avoid normal feature commits directly on the default
-  branch; clarify a requested exception, such as project bootstrap.
-- A request to **commit** is approval to select intended changes, stage them,
-  and commit. Do not request a second approval of the message. Inspect the
-  final staged diff and preserve unrelated paths or hunks. If existing staged
-  material or mixed changes make selection unclear, stop and ask rather than
-  committing or staging extra content.
+- Personal projects may work directly on the default branch. Do not create or
+  switch branches automatically. Create a branch only when asked; prefer a
+  small descriptive name such as `feat/answer-result` or `bugfix/export-path`.
+- Client and collaboration projects use separate branches and PRs into the
+  default branch. If work is on that branch, ask before creating or switching
+  branches. Do not make direct commits there without an explicit exception to
+  this policy. Starting development alone grants no branch authority.
+- A commit request permits selecting intended changes, staging, and committing,
+  subject to the destination rule above. Do not request a second approval of
+  the message. Inspect the final staged diff. If staged material or mixed hunks
+  make selection unclear, ask rather than including extra content.
 - Commit one coherent, reasonably small unit. Derive the subject from the
-  staged diff: name the changed behaviour or artifact and the meaningful
-  result. For a changed output, include the new value when it distinguishes the
-  change; for documentation, name the topic documented. Avoid vague adjectives
-  like `correct` or `improved` without specifics, jokes, metaphors, generic
-  wording, and type prefixes (`feat:`, `fix:`, `chore:`). Keep technical detail
-  minimal; add a body only when important rationale cannot fit in the subject.
-  Report the commit and validation performed, including anything not checked.
-  Stop; do not push because the commit succeeded.
+  staged diff and name the changed behaviour or artifact. Include a new value
+  when it distinguishes the result. Avoid vague claims of improvement, jokes,
+  metaphors, and type prefixes such as `feat:` or `fix:`. Add a body only for
+  important rationale that cannot fit in the subject.
+- Report the commit and validation, including anything not checked. Stop; a
+  successful commit does not authorize publication.
 
 ## Push and pull request
 
-- Push only on request. Check local and remote targets; use a configured
-  upstream when unambiguous, otherwise ask for remote and destination. No
-  force push by default, and never force-push the protected default branch.
-  Report remote failures or uncertain outcomes rather than blindly retrying.
-- Create a PR only on request. Do not infer the need for one from repository
-  visibility or assumed client ownership. Confirm ambiguous base, head, title,
-  or target repository. Creating a PR neither merges nor tags it.
+- Push only on request. Verify remote and destination; a configured upstream
+  does not remove the explicit-default-branch requirement. Ask for missing
+  targets. Do not force-push by default or blindly retry uncertain failures.
+- Create a PR only on request. Confirm ambiguous base, head, title, or target
+  repository. Creating a PR neither merges nor tags it.
+- In client and collaboration projects, every PR into the default branch is a
+  release, including bug fixes. Personal projects have no automatic versioning
+  requirement; version only releases the user requests.
 
 ## Merge, tag, and release
 
-- For a requested merge into the configured default branch, require the
-  user's **exact `MAJOR.MINOR.PATCH` version** before mutation. Do not infer a
-  bump from commit count, force a carry at 10, add a `v`, or pick an initial
-  version automatically. Check that the tag is available and that the chosen
-  version fits the intended state; ask if it conflicts with existing versions.
-- Prefer a squash merge. Check the branch or PR, target, remote, validation,
-  and current base before merging; stop on ambiguity, conflicts, failing
-  required checks, or unrelated work. An explicit merge-to-default request
-  authorizes publishing the resulting default-branch commit and its tag to the
-  agreed remote. Tag only the **resulting default-branch commit** after it
-  exists and verify the published tag points there. Do not auto-tag PR creation
-  or a merge into another branch.
-- A PR merged later by someone else does not trigger Pi automatically. A
-  separate request is needed to tag an existing default-branch commit. Do not
-  retroactively tag bootstrap commits, overwrite tags, delete branches, or
-  create a GitHub Release without specific instruction.
-- Remote operations may partially succeed. If a merge lands but tagging or
-  publication fails, report the exact known state and do not silently retry,
-  claim rollback, or start a different Git action.
+- A release merge or tagging request requires the user's exact
+  `MAJOR.MINOR.PATCH` version before mutation. Do not infer the bump, add a `v`,
+  force a carry at 10, or choose an initial version. Check that the version fits
+  existing releases and that its tag is available. Ask if either is unclear.
+- Treat a requested client/collaboration release merge as including its required
+  local version tag. A personal merge needs a tag only when requested as a
+  release. Prefer a squash merge and check the PR or branch, target, current
+  base, validation, and unrelated work. Stop on ambiguity or conflicts.
+- A local merge and tag do not authorize a push. Ask for publication authority
+  if missing. A remote PR merge itself publishes to the default branch; require
+  that remote action and destination to be explicit. Confirm whether the release
+  tag should also be published if the request does not say so.
+- Tag only the resulting default-branch commit after it exists, never the
+  feature-branch commit or PR creation. Verify the target and, when publication
+  is requested, that the published tag points to that same commit.
+- A PR merged later by someone else does not trigger Pi. Tagging that existing
+  merge needs a separate request. Do not retroactively tag bootstrap commits,
+  overwrite tags, delete branches, or create a GitHub Release without a specific
+  request.
+- Remote actions may partially succeed. Report the exact known state if merge,
+  tagging, or publication fails. Do not silently retry, claim rollback, or begin
+  a different Git action.

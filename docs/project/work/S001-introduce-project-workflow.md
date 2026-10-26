@@ -1,6 +1,6 @@
 ---
 id: S001
-status: Review
+status: Done
 parent: B001
 ---
 
@@ -17,10 +17,14 @@ shared record rules, and this project's migrated records.
   metadata and the five agreed status names.
 - Brainstorming, refinement, development, and review have explicit scope,
   output limits, and handoff boundaries; work-items owns the shared rules.
-- Source-edit, acceptance, delegation, and Git authority remain distinct.
+- Implementation and behaviour-file edits require approval; acceptance and Git
+  authority remain separate. Relevant documentation and records are maintained
+  automatically after implementation acceptance, not before it.
+- Git guidance distinguishes personal work from client/collaboration release
+  PRs and requires explicit default-branch commit and push destinations.
+- Brainstorming can suggest worthwhile improvements without creating a backlog;
+  redundant work can be removed without treating it as completed.
 - Setup includes the intended skills without replacing unrelated resources.
-- Repository checks cover setup, record consistency, and workflow fixtures;
-  model-dependent checks are available with their limitations stated.
 - Superseded definition and progress files are removed and links updated.
 
 ## Tasks
@@ -28,15 +32,20 @@ shared record rules, and this project's migrated records.
 - [x] Define activity skills and shared record rules.
 - [x] Update routing, setup, and related existing guidance.
 - [x] Migrate this project to the charter and work records.
-- [x] Update and run repository checks.
+- [x] Remove the test machinery and formal trial items.
+- [x] Align behaviour rules and guides with the agreed authority boundaries.
 - [x] Hand the result over for user review.
 
 ## Review
 
-Ready for user review. Twelve deterministic checks pass, covering setup,
-records, links, fixtures, and smoke-result checks. Bash syntax and
-`git diff --check` also pass. These checks do not establish model behaviour.
+The contract, activity skills, shared record rules, and guides have been
+rewritten to reflect the user's agreed workflow changes. Test machinery and
+formal trial items are removed; usefulness will be assessed during daily work.
 
-Model-dependent trials and live activation have not run. Existing live
-symlinks reflect checkout edits, but the new skills still need installation.
-User acceptance is pending; no Git mutation or external link change was made.
+The live resource links point to this checkout. Local Markdown links, skill
+names and frontmatter, shell syntax, and diff whitespace were checked.
+Installation does not establish reliable model behaviour.
+
+The user reviewed the revised files, said everything appeared good, and
+requested committing the changes on main. The slice is accepted; no separate
+merge or publication is required for this delivery.

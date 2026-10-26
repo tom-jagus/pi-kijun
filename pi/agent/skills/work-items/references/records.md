@@ -111,8 +111,10 @@ blocked_by: Waiting for the export format decision.
 
 ## Review evidence
 
-Use one short `## Review` section in the item, replacing stale findings rather
-than appending a report after every attempt. Identify satisfied, unmet, and
+Write review evidence after acceptance or when interim recording is explicitly
+requested. Until then, report findings in the conversation. Use one short
+`## Review` section in the item, replacing stale findings rather than appending
+a report after every attempt. Identify satisfied, unmet, and
 unverified criteria, the evidence or checks supporting the verdict, and any
 required follow-up. Omit empty categories. Link to detailed evidence instead
 of pasting logs. Identify user acceptance or explicitly delegated acceptance

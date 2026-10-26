@@ -43,8 +43,9 @@ work actually requires and authorizes them.
 
 ## Handoff
 
-Update only the affected brief, slices, and index when record maintenance is
-requested. Record conclusions and blockers, not the refinement discussion.
+A request to refine selected work permits the necessary brief, slice, and index
+edits without a separate permission question. A request only to discuss possible
+refinement stays read-only. Record conclusions and blockers, not the discussion.
 After an unsuccessful brief review, add or revise the remaining slices without
 reopening correctly completed ones. A request for refinement does not grant
 acceptance of changed goals or automatic permission to start development.

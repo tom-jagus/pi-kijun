@@ -23,9 +23,11 @@ mutations.
   project meaning to `brainstorming` instead of silently redefining scope.
 - Determine the editing mode **before** a source-writing tool call. The default
   is proposal-only, even if the user asks to implement or fix something. Without
-  Pi-edit authority, follow the manual-first path and give a usable proposal;
-  do not ask to take over editing instead. Pi may edit only after explicit
-  approval for this change or under an unrevoked, current-session source-edit
+  Pi-edit authority, follow the manual-first path and give a usable proposal.
+  If the user asks Pi to write implementation files but the grant is unclear,
+  ask a short approval question for that bounded change. Do not replace normal
+  guided-development proposals with repeated offers to take over. Pi may edit
+  only after explicit approval for this change or an unrevoked session source-edit
   grant covering this project and work. If an offered grant's scope or status
   is unclear, ask before editing. A grant for one change does not authorize
   the next; source authority does not authorize Git operations.
@@ -39,11 +41,13 @@ hand off to `refinement` only when the request covers it. Do not rewrite the
 criteria to make implementation convenient.
 
 A bounded source request without project records can proceed normally; do not
-manufacture a brief, slice, or charter as a prerequisite. When record maintenance
-is included, move a started slice to In progress and keep the index consistent.
-One selected slice has one accountable worker. Do not launch agents or create
-branches/worktrees without explicit authority; worker permissions must be
-stated rather than inherited from this session.
+manufacture a brief, slice, or charter as a prerequisite. Behaviour-defining
+Markdown, including agent instructions and skills, follows the same approval
+boundary as source. Do not update implementation-related documentation or work
+records before the user accepts the actual result, unless explicitly asked to
+record interim state. One selected slice has one accountable worker. Do not
+launch agents or create branches/worktrees without explicit authority; worker
+permissions must be stated rather than inherited from this session.
 
 ## Manual-first path
 
@@ -82,14 +86,22 @@ checks when appropriate; first assess whether a command may rewrite source,
 create significant artifacts, reach external paths, or have other side effects.
 Do not run auto-fixes or generators that change source without the applicable
 edit authority. Report tests performed, tests not performed, failures, and
-remaining uncertainty accurately. Suggest documentation updates only when they
-would preserve meaningful context. Never stage, commit, or publish just because
+remaining uncertainty accurately. Never stage, commit, or publish just because
 an implementation unit is done.
 
-For tracked work, update only useful task progress and concise verification
-evidence when record maintenance is in scope. A proposal awaiting manual entry
-is not an implemented result. Move delivered work to Review, not Done; use
-`review` for acceptance assessment. Do not silently begin the next slice, add
-follow-up slices, expand the brief, or generate a development diary. Hand gaps
-to refinement and leave acceptance criteria unchanged unless the user accepts
-a proposed change.
+Hand the actual result to `review` and the user before documentation updates.
+A proposal awaiting manual entry is not an implemented result. Until the user
+accepts the result, report readiness, findings, and gaps in the conversation;
+leave related documentation and work records unchanged unless interim recording
+is explicitly requested. Do not treat edit approval as acceptance.
+
+After user acceptance, update relevant repository documentation and existing
+work records automatically, without another documentation-permission question.
+Use `documentation` and `work-items`, verify claims against the accepted files,
+and report changed paths. Record Done only when all criteria and agreed
+integration requirements are met. If acceptance was explicitly delegated,
+follow the same sequence after the delegated review accepts the result.
+
+Do not silently begin the next slice, create follow-up slices, expand the brief,
+or update the vault. Hand gaps to refinement and leave acceptance criteria
+unchanged unless the user accepts a proposed change.

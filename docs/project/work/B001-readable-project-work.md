@@ -1,6 +1,6 @@
 ---
 id: B001
-status: In progress
+status: Done
 ---
 
 # Readable project work
@@ -19,8 +19,11 @@ should not require reconstructing an agent's activity history.
 
 Use a charter, a work index, briefs, and slices with task checklists. Separate
 brainstorming, refinement, development, and review guidance; share record rules
-through work-items. Keep existing editing and Git authority boundaries. Do not
-add orchestration, mandatory sprints, or a board generator.
+through work-items. Keep implementation approval separate from acceptance and
+Git authority. Update implementation-related documentation after acceptance;
+allow requested documentation work without separate edit approval. Assess the
+rules during ordinary project work, without a formal test suite or pilot.
+Do not add orchestration, mandatory sprints, or a board generator.
 
 ## Acceptance criteria
 
@@ -29,5 +32,18 @@ add orchestration, mandatory sprints, or a board generator.
 - Activity guidance limits what each activity produces and when it stops.
 - Review assesses outcomes and evidence rather than closing briefs merely
   because their slices are Done.
-- A fresh-session pilot demonstrates useful routing and bounded output before
-  this brief is accepted as complete.
+- The user judges the records and guidance understandable and useful for daily
+  work. Suggestions remain proposals until selected, and abandoned work can be
+  removed without an archive or an invented completion.
+
+## Review
+
+The charter and linked records make project purpose and work readable without a
+progress narrative. Activity skills define output and handoff boundaries;
+review assesses brief outcomes separately from slice completion. Brainstorming
+supports suggestions without an automatic backlog, and work-items defines
+removal of abandoned work.
+
+The user reviewed the revised setup, said everything appeared good, and
+requested committing it on main. This accepts the brief's revised outcome;
+ongoing model behaviour will be assessed during ordinary project work.

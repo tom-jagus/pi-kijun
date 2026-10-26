@@ -26,8 +26,10 @@ restructuring records; use the same shapes across projects.
   implementation plan. Standalone slices do not require an invented brief.
 
 Use stable, unique B and S IDs, at least three digits, with separate sequences.
-Check existing files before allocating an ID. Use lowercase hyphenated slugs;
-never encode status in paths, reuse IDs, or rename files just to change titles.
+Check existing files, Git state, and relevant history for deleted IDs before
+allocating an ID; ask if allocation cannot be established safely. Use lowercase
+hyphenated slugs. Never encode status in paths, reuse IDs, or rename files just
+to change titles.
 A slice may have one brief as its parent. Use IDs for relationships. Milestones
 are optional grouping targets, not a required parent level; introduce them only
 when requested for a real delivery target.
@@ -54,24 +56,29 @@ and the index.
 - In progress has active work and one accountable worker or coordinator. A
   brief enters In progress when its first slice starts or active discovery
   toward its outcome begins, not merely when someone captures an idea.
-- Review has a result and evidence ready for assessment. Development may hand a
-  slice over for Review but must not accept its own delivery as Done.
+- Review has a result and evidence ready for assessment. Development hands the
+  result over in the conversation, not by prematurely updating records. Record
+  Review when interim recording is requested or an accepted result still needs
+  agreed integration. Development must not accept its own delivery as Done.
 - Done meets the item's criteria and agreed review and integration requirements.
   Default to user acceptance unless the user explicitly delegates acceptance.
   Delegation to review is not delegation to implement fixes or perform Git work.
 
-The normal path is Draft, To do, In progress, Review, Done. Do not advance an
-item merely because a file was written. Move Draft to To do only after the user
+The normal stages are Draft, To do, In progress, Review, Done. Do not write
+interim updates just to visit every status, or advance an item merely because
+a file was written. Move Draft to To do only after the user
 accepts the outcome and criteria, including through an explicit refinement
 request that already specifies them. A request to develop a Draft item does
 not settle its missing decisions. Report what prevents starting and refine it
 only when the request covers that activity.
 
-A failed review returns the item to In progress. Missing evidence may leave it
-in Review with a blocker. A material change to the intended outcome or criteria
-must be proposed and accepted; if the definition is no longer settled, return
-it to Draft. Reopening Done requires an explicit decision. Do not silently
-reopen accepted work when a new follow-up slice would describe the need better.
+Apply implementation status updates after acceptance or when interim recording
+is explicitly requested; otherwise report the actual stage in the conversation.
+When recording a failed review, use In progress. Missing evidence may leave an
+item in Review with a blocker. A material change to the outcome or criteria must
+be proposed and accepted; if the definition is no longer settled, use Draft.
+Reopening Done requires an explicit decision. Do not silently reopen accepted
+work when a new follow-up slice would describe the need better.
 
 ## Brief review and dependencies
 
@@ -87,13 +94,31 @@ missing or non-Done dependency as satisfied. Reject self-dependencies, cycles,
 and references to missing items. Do not add Blocked, Cancelled, or extra states
 without agreeing a workflow change; use `blocked_by` for the current obstacle.
 
+## Remove abandoned work
+
+When the user decides an item is redundant or no longer worth pursuing, remove
+its file and index entry rather than adding an abandoned state or archive.
+Inspect child items, links, and dependencies first. Remove obsolete references,
+but do not silently treat an unmet prerequisite as satisfied. Ask if removing a
+parent or dependency leaves useful work without an agreed outcome or plan.
+
+Do not delete items merely because they are old, or mark abandoned work Done.
+Keep useful completed records by default. Never reuse deleted IDs or create
+placeholder files just to reserve them. Git history preserves committed records;
+warn before discarding material that has no recoverable copy.
+
 ## Bounded maintenance
 
 1. Read the affected records, index, and relevant repository evidence. Preserve
    unrelated edits and distinguish recorded state from verified facts.
-2. Change only records needed by the requested activity. An activity request
-   covers its necessary record updates, not unrelated cleanup or source edits.
-   A read-only discussion or status report does not authorize record changes.
+2. Requests to establish, capture, or refine records permit their necessary
+   writes without separate edit approval. Discussion, suggestions, and status
+   reporting remain read-only. For implementation, wait for user acceptance or
+   explicitly delegated acceptance, then update relevant records automatically.
+   Before acceptance, record interim state or review findings only when explicitly
+   asked. Do not infer completion or acceptance from permission to edit.
+   An explicit request to revise the workflow or its records permits those edits
+   without implying acceptance of the resulting implementation.
 3. Keep all open items in the index, linked to their files, with short outcome,
    status, and blocker columns. Omit Done rows; keep their files in place.
    Order parents beside children where practical. Do not duplicate criteria,
@@ -109,10 +134,11 @@ without agreeing a workflow change; use `blocked_by` for the current obstacle.
 ## Concurrent work
 
 Use one coordinator to allocate IDs, assign slices, and update the shared
-index and brief states. Workers update only their assigned slices and return
-evidence; the coordinator reconciles shared records after those updates. This
-is the concurrent-work exception to updating the index alongside an item. Separate
-worktrees isolate files, not incompatible design decisions. Check overlapping
-changes and dependencies before parallel assignment. Do not launch workers,
+index and brief states. Workers return evidence and update only their assigned
+slices after acceptance or when interim recording is explicitly requested. The
+coordinator reconciles shared records afterward. This is the concurrent-work
+exception to updating the index alongside an item. Separate worktrees isolate
+files, not incompatible design decisions. Check overlapping changes and
+dependencies before parallel assignment. Do not launch workers,
 create branches or worktrees, or inherit source/Git permissions implicitly.
 This skill defines records; it does not implement locking or orchestration.

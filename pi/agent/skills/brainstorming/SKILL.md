@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: Explore a project's purpose, outcomes, boundaries, or possible work. Use to establish or revise a project charter, capture briefs, or discuss unsettled ideas. Does not automatically refine slices, plan implementation tasks, or start development.
+description: Explore a project's purpose, outcomes, boundaries, or possible work. Use for charters, briefs, unsettled ideas, or suggestions when the user asks what is missing, what to improve, or what to do next without a defined outcome. Does not automatically refine slices, plan implementation, or create backlog items from suggestions.
 ---
 
 # Brainstorming
@@ -20,9 +20,25 @@ Distinguish observations, proposals, accepted decisions, and unresolved
 questions. Discuss alternatives when they materially change the outcome or
 constraints. Do not force a solution or a detailed design to fill a template.
 
+## Suggest worthwhile next steps
+
+When the user is unsure what else would help, inspect the project's purpose,
+relevant implementation, and open work. Look for concrete user problems,
+incomplete outcomes, repeated friction, and useful simplifications. This is
+exploratory assessment, not acceptance review of existing delivery.
+
+Offer a short ranked set of options. Explain the evidence, expected benefit,
+main trade-off, and whether each option is existing work or a new proposal.
+Prefer removing needless work over adding features without a clear benefit.
+Say when nothing more appears worth doing; do not invent work to fill a list.
+
+Keep suggestions in the conversation until the user chooses to capture or
+pursue them. Do not automatically create briefs, slices, or task checklists.
+
 ## Record only the useful result
 
-When the request includes maintaining records:
+When the user asks to establish, capture, or revise project records, make the
+necessary documentation edits without a separate edit-permission question:
 
 - Establish or revise the charter's high-level content using the shared shape.
   Keep proposed scope changes explicit until the user accepts them.

@@ -10,6 +10,25 @@ Inspect the existing file and relevant repository sources before changing claims
 commands, links, or legal information. Follow the global documentation review
 boundary; this skill does not grant source-edit or Git authority.
 
+## Timing and authority
+
+Direct requests to create or revise ordinary documentation permit the necessary
+writes without separate edit approval. For implementation work, first deliver
+the result for review and wait for user acceptance or explicitly delegated
+acceptance. Then update relevant repository documentation automatically as part
+of finishing that work. Do not ask again whether documentation should be updated.
+
+Before acceptance, leave implementation-related documentation and work records
+unchanged unless explicitly asked to record interim findings. Verify the
+accepted files rather than documenting a proposal or assuming it was applied.
+Use `work-items` for related record updates. Document only what changed and
+matters to the reader; do not create extra guides just to demonstrate activity.
+
+Behaviour-defining files, including `AGENTS.md`, skills, and prompt templates,
+are implementation files even when written in Markdown. Follow `development`
+and obtain the applicable edit approval. Automatic repository documentation
+maintenance never includes vault notes or Git mutations.
+
 ## README convention
 
 Keep a consistent, simple shape across projects; omit inapplicable sections

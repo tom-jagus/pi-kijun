@@ -15,13 +15,17 @@ the requested change without inventing project records.
 
 Read the selected item, parent brief when relevant, charter constraints, actual
 changes, and available verification evidence. A work index or worker report is
-not proof of delivery. Check the current repository rather than relying on a
-recorded claim. Do not require every project document for a narrow review.
+not proof of delivery. A delivered implementation may still have its previous
+recorded status because updates wait for acceptance. Check the actual files and
+conversation handoff rather than requiring Review status as a prerequisite.
+Do not require every project document for a narrow review.
 
 Identify the acceptance and integration requirements. Default to user
 acceptance unless explicitly delegated. Permission to implement, a tool-call
-approval, or permission to record findings is not acceptance authority. Review
-is read-only unless the user requests or includes maintaining its records.
+approval, or permission to record findings is not acceptance authority. Before
+acceptance, review is read-only unless recording findings is explicitly
+requested. After user or explicitly delegated acceptance, update the relevant
+documentation and work records without another permission question.
 
 ## Assess each criterion
 
@@ -45,18 +49,25 @@ slices may be reviewed when direct evidence of its outcome exists.
 ## Verdict and handoff
 
 Keep the result short: verdict, evidence, and only necessary findings or
-follow-up. When record maintenance is in scope, replace the item's Review
-section and refresh the index through `work-items`; do not create a separate
-review report or paste tool logs.
+follow-up. Report findings in the conversation while acceptance is pending.
+If interim recording is explicitly requested, replace the item's Review section
+and refresh the index through `work-items`; do not create a separate review
+report or paste tool logs.
 
 - If criteria and integration requirements are met but acceptance is not
-  delegated, leave the item in Review and request the user's acceptance.
-- Mark Done only after user acceptance or under explicit delegated acceptance;
-  record the basis. Do not merge, tag, or publish as a side effect.
-- If criteria are unmet, return the item to In progress and describe the gap.
-  Remaining brief work goes to `refinement`; correctly Done slices stay Done.
-- If evidence is missing, leave the item in Review with a concrete blocker or
-  return it for further work when that is the agreed disposition.
+  delegated, ask for the user's acceptance. Do not update implementation-related
+  documentation or records yet. If interim recording was requested, use Review.
+- After user or explicitly delegated acceptance, update relevant documentation
+  through `documentation` and records through `work-items` automatically. Record
+  the acceptance basis. Use Done only when criteria and agreed integration
+  requirements are met; otherwise record Review and the remaining requirement.
+- If criteria are unmet, explain the gap and needed development or refinement.
+  When recording was requested, use In progress. Correctly Done slices stay Done.
+- If evidence is missing, identify the unverified criterion. When recording was
+  requested, use Review with a blocker or the agreed return to In progress.
+
+Report changed paths for editor review. Acceptance and documentation updates do
+not authorize a merge, tag, push, or any other Git mutation.
 
 Do not fix findings, create new slices, change acceptance criteria, or broaden
 scope within review. A changed goal is a proposed decision, not a way to pass
