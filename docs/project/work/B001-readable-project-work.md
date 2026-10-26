@@ -44,6 +44,7 @@ review assesses brief outcomes separately from slice completion. Brainstorming
 supports suggestions without an automatic backlog, and work-items defines
 removal of abandoned work.
 
-The user reviewed the revised setup, said everything appeared good, and
-requested committing it on main. This accepts the brief's revised outcome;
-ongoing model behaviour will be assessed during ordinary project work.
+After the criterion-by-criterion review, the user explicitly accepted B001 and
+all retained slices as Done for the delivered development work. The user will
+assess the workflow during daily project work. Any shortcomings worth addressing
+will become new improvement briefs rather than reopening this accepted brief.

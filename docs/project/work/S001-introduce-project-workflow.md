@@ -46,6 +46,7 @@ The live resource links point to this checkout. Local Markdown links, skill
 names and frontmatter, shell syntax, and diff whitespace were checked.
 Installation does not establish reliable model behaviour.
 
-The user reviewed the revised files, said everything appeared good, and
-requested committing the changes on main. The slice is accepted; no separate
-merge or publication is required for this delivery.
+After the brief's acceptance review, the user explicitly accepted B001 and all
+retained slices, including S001, as Done for the delivered development work.
+No separate merge or publication is required. Future workflow improvements will
+be captured in new briefs when worthwhile.
