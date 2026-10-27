@@ -13,7 +13,7 @@
 | [S007](work/S007-remove-vault-guidance.md) | Remove vault instructions and routing. | To do | None |
 | [B006](work/B006-maintainable-policy-guidance.md) | Reduce redundant policy without weakening guidance. | To do | None |
 | [S008](work/S008-consolidate-policy-guidance.md) | Consolidate repeated authority and acceptance rules. | To do | None |
-| [B007](work/B007-independent-content-review.md) | Obtain independent content review without manual copying. | Review | Combined outcome verification pending. |
-| [S010](work/S010-bounded-content-review-exchanges.md) | Integrate bounded reviewer exchanges. | Review | Runtime restrictions and exchange demonstrations unverified. |
+| [B007](work/B007-independent-content-review.md) | Obtain independent content review without manual copying. | Review | Final assessment and remaining S010 checks pending. |
+| [S010](work/S010-bounded-content-review-exchanges.md) | Integrate bounded reviewer exchanges. | Review | Tool audit, invocation-limit disagreement, and failure handling unverified. |
 
 Completed items remain in [work/](work/).

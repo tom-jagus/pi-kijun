@@ -89,17 +89,26 @@ ambient extensions disabled. This is tool-level restriction, not an
 operating-system sandbox or a guarantee about every future launch.
 
 The [delegation guidance](../pi/agent/skills/content-review/references/delegation.md)
-requires fresh context and at most three reviewer invocations per user review
-request, including failures and retries. The invocation limit is main-agent
+requires a fresh initial context and an asynchronous launch that returns a run
+ID. Continue the same review by resuming the eligible saved session; start fresh
+for a separate review or a user-requested assessment without prior discussion.
+If resumption is unavailable, report it before using a fresh-session fallback
+with the relevant prior findings. At most three reviewer invocations are allowed
+per user review request, including resumed turns, failures, and retries. Starting
+a fresh session does not reset that count. The invocation limit is main-agent
 guidance, not a runtime-enforced counter. Plain content review stays in the main
 session unless independent review is requested. Model choice remains with the
 user; the reviewer does not pin a model. A model requiring an extension-based
 provider may be incompatible with the restricted launch configuration. Report
 that conflict rather than silently weakening restrictions or changing models.
 
-A successful initial review does not verify every exchange case. Follow-up
-isolation, evidence-based clarification, disagreement at the invocation limit,
-and failure or cancellation handling still need hands-on verification for
+A read-only test on `rakuraku-kii/README.md` verified an asynchronous initial
+review followed by a resumed turn. The resumed reviewer recalled its earlier
+check phrase and finding without either being supplied in the follow-up, and
+both turns used the same saved session file. This verifies context continuity
+for that exchange, not every exchange case. Evidence-based clarification,
+disagreement at the invocation limit, and failure or cancellation handling still
+need hands-on verification for
 [S010](project/work/S010-bounded-content-review-exchanges.md).
 
 ### Roll back

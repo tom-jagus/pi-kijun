@@ -12,7 +12,7 @@ inheritProjectContext: true
 inheritGlobalContext: true
 inheritSkills: false
 defaultContext: fresh
-async: false
+async: true
 allowNestedSubagents: false
 allowedAgents:
 acceptanceRole: read-only

@@ -26,10 +26,14 @@ ordinary session without that extension. Keep content review distinct from the
 existing `review` skill's assessment of delivery against acceptance criteria.
 
 Allow at most three reviewer invocations per user review request, including the
-initial review. Stop earlier when findings are resolved or another invocation
-would add nothing. Start each invocation with fresh context; supply previous
-findings and responses explicitly for follow-up rather than requiring persistent
-reviewer sessions. Do not pass the author's full conversation by default.
+initial review and resumed turns. Stop earlier when findings are resolved or
+another invocation would add nothing. Start the initial review with fresh
+context and resume an eligible saved reviewer session for follow-up within the
+same review. Start a fresh session for a separate review or an explicitly
+requested assessment without prior discussion. If resume is unavailable, report
+the limitation and supply previous findings and relevant context to any fresh
+fallback. A fresh session does not reset the same review's invocation count.
+Do not pass the author's full conversation or a persuasive defense of the draft.
 
 Review does not authorize revisions, acceptance, work-record updates, plugin
 installation, or Git mutations. Preserve existing authority boundaries. Exclude
@@ -66,6 +70,15 @@ revision loops, and general-purpose orchestration.
 
 ## Review
 
-Moved to Review at the user's request. S009 is accepted. The combined outcome
-still needs verification against this brief's acceptance criteria, including
-runtime evidence from S010. This status does not record acceptance.
+S009 is accepted. The user approved fresh initial reviews with resumed
+follow-ups, replacing the earlier fresh-context requirement for every turn.
+Initial file-based reviews returned findings without manual copying. A synthetic
+README test detected planted defects; a resumed clarification retained a valid
+finding, narrowed another to missing reader guidance, and withdrew an
+audience-dependent finding. The exchange stopped after two turns. Independent
+content review found no material findings in the modified integration guidance.
+
+The result remains in Review, not accepted as complete. Unresolved disagreement
+at the invocation limit, failed or cancelled review handling, and a complete
+effective-tool audit remain unverified in S010. The combined outcome still needs
+final assessment against this brief's criteria.

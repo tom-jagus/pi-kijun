@@ -18,16 +18,23 @@ silently substitute a same-session review or install software. A same-session
 assessment is an alternative to offer, not an independent result.
 
 For execution, select `content-reviewer` from user scope so a project agent with
-the same name cannot silently replace it. Use one foreground call at a time:
+the same name cannot silently replace it. Launch an asynchronous review to obtain
+an addressable run ID and saved session for follow-ups. Use one reviewer turn at
+a time:
 
 ```js
 subagent({
   agent: "content-reviewer",
   task: "Review the specified files for the stated audience and purpose...",
-  async: false,
+  async: true,
   options: { agentScope: "user", context: "fresh", mission: false }
 })
 ```
+
+Retain the returned run ID and return control while the reviewer runs. Native
+completion notification supplies the result and saved session location. Do not
+poll or use `bg_wait` for this notification. Read the completed result before
+starting a follow-up.
 
 Use actual paths and context instead of the placeholder task. Omit `output`,
 `gate`, acceptance overrides, sharing, worktrees, skill overrides, and runner or
@@ -44,10 +51,11 @@ material findings with locations, evidence, consequences, and stable identifiers
 ## Discuss findings within the limit
 
 Count at most three reviewer invocations for the entire user review request,
-including the initial invocation, failures, cancellations, retries, and checks
-of authorized revisions. The limit is main-agent guidance, not a plugin-enforced
-per-request counter. Do not confuse the plugin's per-run or per-session spawn
-budgets with this limit or reset the count after clarification or compaction.
+including the initial invocation, resumed turns, failures, cancellations,
+retries, and checks of authorized revisions. The limit is main-agent guidance,
+not a plugin-enforced per-request counter. Do not confuse the plugin's per-run
+or per-session spawn budgets with this limit or reset the count after
+clarification or compaction.
 When recovering an interrupted exchange, recover its count from the conversation;
 if that is impossible, ask rather than assuming a fresh allowance.
 
@@ -59,12 +67,43 @@ when findings are sufficiently clear to report, or when another exchange would
 add nothing. Agreement is not proof, and disagreement is not a reason to consume
 all three invocations.
 
-Each follow-up is a new `context: "fresh"` invocation, not `resume`, `steer`, a
-fork, or a nested workflow. Include prior findings, their identifiers, the main
-agent's responses, relevant source paths, and what specifically needs checking.
-Keep findings and responses distinguishable; preserve material objections rather
-than replacing them with a selective summary. Ask the reviewer to explain which
-findings remain, changed, or were withdrawn and why.
+Resume an eligible reviewer session when continuing the same review, such as
+clarifying a finding, challenging it with evidence, checking an authorized
+revision, or resolving a consequential disagreement. Recheck current files when
+relevant; remembered context is not proof that files are unchanged. Use the
+retained run ID and provide the main agent's responses, relevant source paths,
+and what specifically needs checking. Keep findings and responses
+distinguishable, and preserve material objections. Ask the reviewer to explain
+which findings remain, changed, or were withdrawn and why.
+
+Inspect the completed run with `subagent({ action: "status", id: runId })`, then
+resume it with:
+
+```js
+subagent({
+  action: "resume",
+  id: runId,
+  message: "Reconsider F1 against the following evidence..."
+})
+```
+
+Use the actual retained ID and follow-up question. Resume checks eligibility
+and starts a new child from the saved conversation context. It returns a new
+run ID; retain that ID for the next turn. Return control and wait for native
+completion as with the initial review. The stored reviewer contract is retained;
+do not add model, runner, or permission overrides.
+
+Start a fresh session for a separate review with a different purpose or
+unrelated target, or when the user requests an assessment without the previous
+review discussion. A clarification or revision check within the same review is
+not a new review merely because files changed.
+
+If the session cannot be resumed, report the limitation. A fresh invocation may
+continue the review when allowance remains: include prior findings, their
+identifiers, and the relevant context, and do not present it as a resumed
+conversation. Starting a fresh session does not reset the invocation count for
+the same user review request. Do not relabel a continuation as a new review to
+bypass the limit.
 
 Resolve factual misunderstandings without involving the user at every exchange.
 Return questions when resolution requires the user's scope choices, preferences,
