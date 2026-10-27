@@ -53,6 +53,13 @@ user-facing guides and configured vault notes; `git` owns specifically requested
 Git actions. The global contract selects guidance from ordinary conversation,
 so the user does not need to name skills or use special commands.
 
+Content review checks documentation and work-item quality, separately from
+implementation acceptance. A request for independent content review uses the
+read-only `content-reviewer` through an additional package. See
+[Workflow dependencies](dependencies.md) for installation, configuration,
+verification, and rollback. Without that package, same-session content review
+remains usable.
+
 A conversation may cover several activities. The agent should name a meaningful
 transition and continue when the request covers it. Discussion and status
 reporting remain read-only. Requests to establish, capture, or refine records

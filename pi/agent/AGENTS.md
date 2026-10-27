@@ -61,6 +61,10 @@
   `brainstorming` for the charter, brief outcomes, and suggestions when the next
   useful improvement is unclear; use `refinement` for slices and task checklists,
   `development` for implementation, and `review` for acceptance assessment.
+  Use `content-review` to assess documentation or work-item content, including
+  drafts. When the user requests an independent content review, follow that
+  skill's delegation reference to use `content-reviewer`; ordinary content
+  review does not automatically authorize delegation.
   Load `work-items` when maintaining project records.
   Use `project-context` for status and resuming, `documentation` for user-facing
   guides and vault notes, and `git` for specifically requested Git actions.

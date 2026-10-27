@@ -13,15 +13,21 @@ Kijun. To activate it, run this from the repository root:
 ./setup.sh
 ```
 
-The script links Kijun's `AGENTS.md` and nine skills into
-`${PI_CODING_AGENT_DIR:-$HOME/.pi/agent}`. It skips links already applied and
-refuses collisions or duplicate skill names under `~/.agents/skills/`.
+The script links Kijun's `AGENTS.md`, ten skills, and the `content-reviewer`
+agent definition into `${PI_CODING_AGENT_DIR:-$HOME/.pi/agent}`. It skips links
+already applied and refuses collisions or duplicate skill names under
+`~/.agents/skills/`.
 Existing settings, credentials, packages, and sessions are left alone. An
 independently installed skill with the same name, including `unslop`, is a
 collision; inspect and resolve it yourself before rerunning setup.
 Restart Pi or use `/reload` to discover the resources. To roll back, inspect
 and remove only the symlinks pointing to this checkout; `setup.sh` does not
 remove links.
+
+For independent content review, also install and configure `pi-subagents` using
+[Workflow dependencies](docs/dependencies.md). That guide separates required
+feature dependencies from optional personal tools and covers verification and
+rollback. `setup.sh` does not install any of those packages.
 
 ## Usage
 
@@ -46,6 +52,8 @@ consistent without a separate progress diary.
 - [Project charter](docs/project/charter.md) explains the problem, value, success,
   and boundaries.
 - [Current work](docs/project/work.md) lists open briefs and slices.
+- [Workflow dependencies](docs/dependencies.md) lists feature dependencies,
+  optional packages, installation, configuration, verification, and removal.
 - [Workflow guide](docs/workflow.md) explains activities, records, acceptance,
   documentation timing, and concurrency boundaries.
 - [Operating contract](pi/agent/AGENTS.md) and

@@ -22,6 +22,8 @@ resources=(
   skills/refinement
   skills/development
   skills/review
+  skills/content-review
+  agents/content-reviewer.md
   skills/work-items
   skills/project-context
   skills/documentation
@@ -32,11 +34,13 @@ resources=(
 present() { [[ -e "$1" || -L "$1" ]]; }
 ours() { [[ -L "$2" && $(readlink -- "$2") == "$1" ]]; }
 
-if present "$agent_dir/skills" &&
-   { [[ ! -d "$agent_dir/skills" ]] || [[ -L "$agent_dir/skills" ]]; }; then
-  echo "Skills directory is not a regular directory: $agent_dir/skills" >&2
-  exit 1
-fi
+for directory in skills agents; do
+  if present "$agent_dir/$directory" &&
+     { [[ ! -d "$agent_dir/$directory" ]] || [[ -L "$agent_dir/$directory" ]]; }; then
+    echo "Resource directory is not a regular directory: $agent_dir/$directory" >&2
+    exit 1
+  fi
+done
 
 # Check all sources and destinations before creating any links. Races or I/O
 # failures can still leave a partial setup; rerunning skips links already made.
@@ -44,7 +48,7 @@ for resource in "${resources[@]}"; do
   source="$source_dir/$resource"
   destination="$agent_dir/$resource"
 
-  if [[ "$resource" == AGENTS.md ]]; then
+  if [[ "$resource" == AGENTS.md || "$resource" == agents/* ]]; then
     [[ -f "$source" ]] || { echo "Missing source: $source" >&2; exit 1; }
   else
     [[ -f "$source/SKILL.md" ]] || { echo "Missing skill: $source" >&2; exit 1; }

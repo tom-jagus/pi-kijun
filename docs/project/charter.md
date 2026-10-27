@@ -30,5 +30,8 @@ procedures rather than this charter.
 
 Link repository-owned resources without replacing machine-owned settings or
 runtime data. Skills are behavioural guidance, not technical permission
-controls. Extensions, orchestration, and generated boards are deferred until a
-demonstrated need justifies them. Model choice remains with the user.
+controls. Allow independent content review through one read-only reviewer and
+at most three reviewer invocations per request, with conclusions reported to the
+user. Other orchestration, extensions unrelated to this review workflow, and
+generated boards remain deferred until a demonstrated need justifies them.
+Model choice remains with the user.
