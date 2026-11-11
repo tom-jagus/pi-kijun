@@ -1,7 +1,8 @@
 ---
 id: S007
-status: To do
+status: Review
 parent: B005
+blocked_by: Final comparison and acceptance pending.
 ---
 
 # Remove vault-specific instructions and routing
@@ -36,9 +37,9 @@ preserving repository documentation behaviour and general authority boundaries.
 
 ## Tasks
 
-- [ ] Inspect vault references across the contract, skills, and workflow guide,
+- [x] Inspect vault references across the contract, skills, and workflow guide,
   and confirm edit authority for the behaviour-defining files.
-- [ ] Remove vault-specific content and routing from the documentation skill,
+- [x] Remove vault-specific content and routing from the documentation skill,
   operating contract, and development skill without broadening permissions.
 - [ ] Compare remaining documentation guidance with the original to check that
   README conventions, factual checks, and authority rules are preserved.
@@ -46,3 +47,15 @@ preserving repository documentation behaviour and general authority boundaries.
   run diff-whitespace checks without inspecting or modifying the actual vault.
 - [ ] Present the behaviour changes for acceptance before aligning the workflow
   guide and recording completion under the normal documentation timing rules.
+
+## Review
+
+Vault-specific guidance was removed from the contract, documentation and
+development skills, and workflow guide. The earlier repository search found no
+active vault references in those instructions. Actual vault resources were not
+inspected or modified.
+
+The user approved the removal and subsequent documentation maintenance. Final
+acceptance of the result and the full comparison against the criteria have not
+been recorded. The existing checklist also calls for checks not repeated during
+this documentation update; those are not assumed to pass.

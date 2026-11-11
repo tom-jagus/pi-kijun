@@ -2,18 +2,19 @@
 
 | Item | Outcome | Status | Blocker |
 |---|---|---|---|
-| [B002](work/B002-practical-workflow-examples.md) | Demonstrate common workflow interactions. | To do | None |
-| [S003](work/S003-practical-workflow-examples.md) | Add concise examples to the workflow guide. | To do | None |
-| [B003](work/B003-unfinished-session-recovery.md) | Recover pending work across sessions. | To do | None |
-| [S004](work/S004-define-requested-session-handoffs.md) | Recommend a minimal requested-handoff approach. | To do | None |
-| [S005](work/S005-requested-session-handoffs.md) | Support requested handoff capture and recovery. | To do | Handoff approach awaits discovery and user selection. |
-| [B004](work/B004-read-only-installation-check.md) | Diagnose Kijun activation without changes. | To do | None |
-| [S006](work/S006-read-only-setup-check.md) | Add a read-only setup diagnostic mode. | To do | None |
-| [B005](work/B005-remove-vault-guidance.md) | Remove obsolete personal vault support. | To do | None |
-| [S007](work/S007-remove-vault-guidance.md) | Remove vault instructions and routing. | To do | None |
-| [B006](work/B006-maintainable-policy-guidance.md) | Reduce redundant policy without weakening guidance. | To do | None |
-| [S008](work/S008-consolidate-policy-guidance.md) | Consolidate repeated authority and acceptance rules. | To do | None |
-| [B007](work/B007-independent-content-review.md) | Obtain independent content review without manual copying. | Review | Final assessment and remaining S010 checks pending. |
-| [S010](work/S010-bounded-content-review-exchanges.md) | Integrate bounded reviewer exchanges. | Review | Tool audit, invocation-limit disagreement, and failure handling unverified. |
+| [Brief 2](work/B002-practical-workflow-examples.md) | Demonstrate common workflow interactions. | To do | None |
+| [Slice 3](work/S003-practical-workflow-examples.md) | Add concise examples to the workflow guide. | To do | None |
+| [Brief 3](work/B003-unfinished-session-recovery.md) | Recover pending work across sessions. | To do | None |
+| [Slice 4](work/S004-define-requested-session-handoffs.md) | Recommend a minimal requested-handoff approach. | To do | None |
+| [Slice 5](work/S005-requested-session-handoffs.md) | Support requested handoff capture and recovery. | To do | Handoff approach awaits discovery and user selection. |
+| [Brief 4](work/B004-read-only-installation-check.md) | Diagnose Kijun activation without changes. | To do | None |
+| [Slice 6](work/S006-read-only-setup-check.md) | Add a read-only setup diagnostic mode. | To do | None |
+| [Brief 5](work/B005-remove-vault-guidance.md) | Remove obsolete personal vault support. | In progress | Slice 7 review pending. |
+| [Slice 7](work/S007-remove-vault-guidance.md) | Remove vault instructions and routing. | Review | Final comparison and acceptance pending. |
+| [Brief 6](work/B006-maintainable-policy-guidance.md) | Reduce redundant policy without weakening guidance. | In progress | Slice 8 review pending. |
+| [Slice 8](work/S008-consolidate-policy-guidance.md) | Consolidate repeated authority and acceptance rules. | Review | Representative comparison and acceptance pending. |
+| [Brief 7](work/B007-independent-content-review.md) | Obtain independent content review without manual copying. | Review | Final assessment and remaining Slice 10 checks pending. |
+| [Slice 10](work/S010-bounded-content-review-exchanges.md) | Integrate bounded reviewer exchanges. | Review | Tool audit, invocation-limit disagreement, and failure handling unverified. |
+| [Brief 8](work/B008-personal-memory.md) | Retain approved personal context across sessions. | Draft | Storage, loading, and ChatGPT migration design remain undecided. |
 
 Completed items remain in [work/](work/).

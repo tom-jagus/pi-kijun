@@ -109,7 +109,7 @@ both turns used the same saved session file. This verifies context continuity
 for that exchange, not every exchange case. Evidence-based clarification,
 disagreement at the invocation limit, and failure or cancellation handling still
 need hands-on verification for
-[S010](project/work/S010-bounded-content-review-exchanges.md).
+[Slice 10](project/work/S010-bounded-content-review-exchanges.md).
 
 ### Roll back
 

@@ -1,6 +1,7 @@
 ---
 id: B006
-status: To do
+status: In progress
+blocked_by: Slice 8 review pending.
 ---
 
 # Maintainable policy guidance

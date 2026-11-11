@@ -1,7 +1,8 @@
 ---
 id: S008
-status: To do
+status: Review
 parent: B006
+blocked_by: Representative comparison and acceptance pending.
 ---
 
 # Consolidate repeated authority and acceptance guidance
@@ -40,7 +41,7 @@ while preserving the rules and enough local context for each activity.
 
 ## Tasks
 
-- [ ] Read current guidance and applicable accepted work before editing; identify
+- [x] Read current guidance and applicable accepted work before editing; identify
   candidate duplication and confirm authority for behaviour-file changes.
 - [ ] Map candidate removals to the governing rule and activity-specific meaning
   that must remain. Leave ambiguity or a policy conflict for user decision
@@ -58,3 +59,16 @@ The handoff work in S005 and vault removal in S007 touch overlapping guidance.
 Coordinate those edits rather than implementing them concurrently in the same
 files. Recheck current accepted rules at delivery time; this cleanup must not
 undo their results. No completion dependency is required merely for file overlap.
+
+## Review
+
+The contract retains governing authority and timing rules. Development, review,
+documentation, and project-context now refer to those rules rather than repeating
+full procedures. Local reminders remain where they explain activity-specific
+stopping points. The brief-review recording conflict was also clarified.
+
+The user approved the simplification and subsequent documentation maintenance.
+A complete criterion-by-criterion comparison, including the representative
+requests and preserved exceptions, has not been recorded. Final acceptance of
+this slice remains open. The later opt-in validation rule is a separate user
+choice, not evidence that this slice preserved every prior behaviour.

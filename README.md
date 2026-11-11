@@ -37,6 +37,8 @@ Pi edits implementation and behaviour files only with your approval. After you
 review and accept the result, Pi updates relevant documentation and work records
 without a separate request. Direct documentation requests permit edits without
 an additional approval exchange. Git mutations always need a specific request.
+Tests, builds, linters, formatters, and validation scripts run only when you
+request or authorize them. Pi still inspects changes and reports missing evidence.
 Relevant skills supply guidance on demand; no special command is required.
 
 Brainstorming develops the project charter and briefs, or suggests worthwhile

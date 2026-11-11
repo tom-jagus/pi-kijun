@@ -30,9 +30,14 @@ Check existing files, Git state, and relevant history for deleted IDs before
 allocating an ID; ask if allocation cannot be established safely. Use lowercase
 hyphenated slugs. Never encode status in paths, reuse IDs, or rename files just
 to change titles.
-A slice may have one brief as its parent. Use IDs for relationships. Milestones
-are optional grouping targets, not a required parent level; introduce them only
-when requested for a real delivery target.
+In responses, prose, headings, and link labels, display IDs as `Brief 7` or
+`Slice 3`, omitting leading zeros. In responses, wrap each item reference in
+backticks, such as `Brief 7` or `Slice 8`. Keep compact IDs such as `B007` and
+`S003` in
+filenames, YAML metadata, and machine-readable relationships; do not rename files.
+A slice may have one brief as its parent. Use compact IDs for relationships.
+Milestones are optional grouping targets, not a required parent level; introduce
+them only when requested for a real delivery target.
 
 ## Minimal metadata
 
@@ -82,12 +87,14 @@ work when a new follow-up slice would describe the need better.
 
 ## Brief review and dependencies
 
-When all slices in the brief's current plan are Done, start the brief's review
-by moving it to Review, not Done, and hand off to `review`. A brief with no
-slices is not automatically reviewable. Check evidence against its own outcome
-criteria; child completion is not proof. Review may also happen earlier when
-requested. If the outcome is unmet, return the brief to In progress and hand
-remaining work to `refinement`. Keep correctly completed slices Done.
+When all slices in the brief's current plan are Done, the brief is ready for
+review, not automatically Done. Hand off to `review`; record Review only under
+the recording rules above, otherwise report readiness in the conversation.
+A brief with no slices is not automatically reviewable. Check evidence against
+its own outcome criteria; child completion is not proof. Review may also happen
+earlier when requested. If the outcome is unmet, hand remaining work to
+`refinement`; when recording is authorized, use In progress. Keep correctly
+completed slices Done.
 
 Before starting an item, inspect its dependencies and blocker. Do not treat a
 missing or non-Done dependency as satisfied. Reject self-dependencies, cycles,
@@ -111,14 +118,9 @@ warn before discarding material that has no recoverable copy.
 
 1. Read the affected records, index, and relevant repository evidence. Preserve
    unrelated edits and distinguish recorded state from verified facts.
-2. Requests to establish, capture, or refine records permit their necessary
-   writes without separate edit approval. Discussion, suggestions, and status
-   reporting remain read-only. For implementation, wait for user acceptance or
-   explicitly delegated acceptance, then update relevant records automatically.
-   Before acceptance, record interim state or review findings only when explicitly
-   asked. Do not infer completion or acceptance from permission to edit.
-   An explicit request to revise the workflow or its records permits those edits
-   without implying acceptance of the resulting implementation.
+2. Apply the global contract's documentation and record authority, including
+   direct requests, interim recording, and automatic updates after acceptance.
+   A request to revise the workflow or records does not accept its implementation.
 3. Keep all open items in the index, linked to their files, with short outcome,
    status, and blocker columns. Omit Done rows; keep their files in place.
    Order parents beside children where practical. Do not duplicate criteria,

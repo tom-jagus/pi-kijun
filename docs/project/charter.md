@@ -28,10 +28,15 @@ records. Source work remains manual-first unless explicitly authorized; writing
 records does not imply acceptance. The operating contract and skills own the
 procedures rather than this charter.
 
+Personal memory is an agreed extension, with storage, loading, and migration
+from ChatGPT still to be designed in [Brief 8](work/B008-personal-memory.md).
+Private memory content stays separate from repository-owned policy and does
+not replace project records or grant authority.
+
 Link repository-owned resources without replacing machine-owned settings or
 runtime data. Skills are behavioural guidance, not technical permission
 controls. Allow independent content review through one read-only reviewer and
 at most three reviewer invocations per request, with conclusions reported to the
-user. Other orchestration, extensions unrelated to this review workflow, and
-generated boards remain deferred until a demonstrated need justifies them.
-Model choice remains with the user.
+user. Beyond the personal-memory design in Brief 8, other orchestration,
+unrelated extensions, and generated boards remain deferred until a demonstrated
+need justifies them. Model choice remains with the user.

@@ -1,14 +1,15 @@
 ---
 id: B005
-status: To do
+status: In progress
+blocked_by: Slice 7 review pending.
 ---
 
 # Remove obsolete vault guidance
 
 ## Outcome
 
-Remove Kijun's vault-specific instructions and routing now that personal
-journaling and note-taking are handled manually.
+Remove Kijun's vault-specific instructions and routing because the user no
+longer uses vault or Obsidian notes.
 
 ## Why
 

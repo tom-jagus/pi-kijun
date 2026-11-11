@@ -20,12 +20,9 @@ recorded status because updates wait for acceptance. Check the actual files and
 conversation handoff rather than requiring Review status as a prerequisite.
 Do not require every project document for a narrow review.
 
-Identify the acceptance and integration requirements. Default to user
-acceptance unless explicitly delegated. Permission to implement, a tool-call
-approval, or permission to record findings is not acceptance authority. Before
-acceptance, review is read-only unless recording findings is explicitly
-requested. After user or explicitly delegated acceptance, update the relevant
-documentation and work records without another permission question.
+Identify acceptance and integration requirements. Apply the global contract's
+acceptance authority and documentation timing. Review stays read-only while
+acceptance is pending unless interim recording is explicitly requested.
 
 ## Assess each criterion
 
@@ -35,11 +32,12 @@ Distinguish:
 - Unmet criteria, with specific findings and their effect on the outcome.
 - Unverified criteria, with missing evidence or checks that could not run.
 
-Run proportionate non-destructive checks when appropriate. Report failures,
-checks not performed, and uncertainty accurately. Technical quality and safety
-constraints still matter even if a criterion omitted them; explain any such
-finding separately instead of silently inventing a new product requirement.
-Never treat an unavailable check as a pass.
+Inspect files and available evidence. Follow the global contract's opt-in rule
+for test and validation commands; a review request alone does not authorize them.
+Report failures, checks not performed, and uncertainty accurately. Technical
+quality and safety still matter even if a criterion omitted them; explain such
+findings separately rather than inventing product requirements. Never treat an
+unrun or unavailable check as a pass.
 
 For a slice, assess its own result and relevant technical quality. For a brief,
 assess the combined result against the brief's outcome-level criteria. All
@@ -54,17 +52,14 @@ If interim recording is explicitly requested, replace the item's Review section
 and refresh the index through `work-items`; do not create a separate review
 report or paste tool logs.
 
-- If criteria and integration requirements are met but acceptance is not
-  delegated, ask for the user's acceptance. Do not update implementation-related
-  documentation or records yet. If interim recording was requested, use Review.
-- After user or explicitly delegated acceptance, update relevant documentation
-  through `documentation` and records through `work-items` automatically. Record
-  the acceptance basis. Use Done only when criteria and agreed integration
-  requirements are met; otherwise record Review and the remaining requirement.
+- If criteria and integration requirements are met, request user acceptance
+  unless acceptance was explicitly delegated.
 - If criteria are unmet, explain the gap and needed development or refinement.
-  When recording was requested, use In progress. Correctly Done slices stay Done.
-- If evidence is missing, identify the unverified criterion. When recording was
-  requested, use Review with a blocker or the agreed return to In progress.
+- If evidence is missing, identify the unverified criterion and required check.
+
+For authorized recording, load `work-items` and follow its status rules; record
+acceptance basis and remaining requirements. After acceptance, load
+`documentation` for relevant automatic updates.
 
 Report changed paths for editor review. Acceptance and documentation updates do
 not authorize a merge, tag, push, or any other Git mutation.

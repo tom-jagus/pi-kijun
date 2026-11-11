@@ -1,8 +1,11 @@
 # Record shapes
 
 Keep the same required headings across projects. Use short paragraphs and
-observable acceptance criteria. For Draft records, state genuine unknowns
-rather than filling headings with invented decisions. Add optional sections
+observable acceptance criteria. Display item names as `Brief 1` or `Slice 1`,
+without leading zeros, in prose and link labels. Retain padded IDs such as
+`B001` and `S001` in paths and YAML. For Draft
+records, state genuine unknowns rather than filling headings with invented
+decisions. Add optional sections
 only when they carry useful content. Do not copy these instructions into
 project files.
 
@@ -133,8 +136,8 @@ backlog ordering system.
 
 | Item | Outcome | Status | Blocker |
 |---|---|---|---|
-| [B001](work/B001-readable-work.md) | Make current work readable. | In progress | None |
-| [S001](work/S001-work-index.md) | Introduce a linked work index. | To do | None |
+| [Brief 1](work/B001-readable-work.md) | Make current work readable. | In progress | None |
+| [Slice 1](work/S001-work-index.md) | Introduce a linked work index. | To do | None |
 
 Completed items remain in [work/](work/).
 ```

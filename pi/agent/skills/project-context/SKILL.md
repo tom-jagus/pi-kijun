@@ -29,14 +29,8 @@ migrate it or treat old and new records as competing sources of truth.
 
 ## Route the next activity
 
-- Use `brainstorming` to establish or change charter or brief outcomes, or to
-  suggest worthwhile improvements when the next useful work is not defined.
-- Use `refinement` to prepare selected slices and task checklists.
-- Use `development` to implement or investigate source changes.
-- Use `review` to assess delivery against acceptance criteria.
-- Use `work-items` for requested record maintenance and automatic updates after
-  implementation acceptance, including formats, dependencies, and the index.
-  A status report alone does not authorize those updates.
+Select the next skill using the global contract's activity map. Reporting alone
+does not authorize record maintenance or implementation.
 
 Name a material activity transition. Continue when the user's request already
 covers it; ask before expanding scope. Do not duplicate these procedures here

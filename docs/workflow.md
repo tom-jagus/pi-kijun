@@ -28,8 +28,9 @@ Standalone slices are allowed. Tasks stay as checklists inside slices unless
 they need their own outcome, ownership, or review.
 
 The work index lists open items with links, outcomes, statuses, and blockers.
-Each item file owns its status. Completed files remain in place and leave the
-open-work table. Remove abandoned or redundant items when the user decides they
+Each item file owns its status. Display names omit leading zeros, such as
+`Brief 7` and `Slice 3`; filenames and YAML retain compact IDs such as `B007`
+and `S003`. Completed files remain in place and leave the open-work table. Remove abandoned or redundant items when the user decides they
 are no longer useful, resolving affected links and dependencies. Do not archive
 them by default or mark them Done. There is no separate progress narrative.
 
@@ -49,7 +50,7 @@ consistent structures. Do not copy the workflow rules into every project.
 
 `work-items` supplies shared record rules to these activities. `project-context`
 recovers or reports current state without changing files. `documentation` owns
-user-facing guides and configured vault notes; `git` owns specifically requested
+repository guides and reference material; `git` owns specifically requested
 Git actions. The global contract selects guidance from ordinary conversation,
 so the user does not need to name skills or use special commands.
 
@@ -85,7 +86,13 @@ After user or explicitly delegated acceptance, automatically update relevant
 repository documentation and existing records. No separate documentation
 request is needed. Direct requests for documentation or record edits do not
 need an implementation first. Report changed paths for editor review. None of
-these permissions authorize vault updates or Git mutations.
+these permissions authorize Git mutations.
+
+Pi inspects changed files and diffs, but runs tests, builds, linters, formatters,
+and validation scripts only when explicitly requested or authorized. A review or
+debugging request alone does not authorize them. Commands necessary for an
+explicitly requested action remain allowed; source-changing commands still need
+edit authority. Pi reports unrun tests and recommends checks for material risks.
 
 ## Git boundaries
 
@@ -114,8 +121,9 @@ acceptance. Status does not grant editing or Git authority.
 
 Review distinguishes satisfied, unmet, and unverified criteria. Missing evidence
 is not a pass. When all slices in a brief's current plan are Done, the brief
-enters Review rather than automatically closing. If its outcome is unmet, it
-returns to In progress and refinement defines the remaining work. Correctly
+is ready for review rather than automatically closing. Recorded transitions
+follow the same acceptance and interim-recording rules described above.
+If its outcome is unmet, refinement defines the remaining work. Correctly
 completed slices stay Done. Changing criteria requires an explicit decision.
 
 ## Concurrent work
@@ -136,5 +144,5 @@ applicable explicit authority.
 Assess Kijun through ordinary work on real projects. Notice missed guidance,
 unwanted writes, unclear records, or unnecessary interruptions, and discuss
 specific improvements when they matter. No formal trial or test suite is
-required to accept these rules. This does not remove ordinary inspection of
-changes or appropriate validation in projects where the skills are used.
+required to accept these rules. Inspect changes and request validation when
+needed; unverified behaviour is not a pass.
