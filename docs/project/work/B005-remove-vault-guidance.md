@@ -1,7 +1,6 @@
 ---
 id: B005
-status: In progress
-blocked_by: Slice 7 review pending.
+status: Done
 ---
 
 # Remove obsolete vault guidance
@@ -45,3 +44,13 @@ configuration, attachments, or external tools. Preserve historical records.
 - Manual journaling and note-taking remain rationale in project records only;
   the contract and skills do not mention the user's replacement habits or
   add instructions about them.
+
+## Review
+
+The user accepted the brief after review of its outcome criteria. Active
+instructions and the workflow guide no longer contain vault procedures or a
+replacement note-taking workflow. Repository documentation conventions and
+edit, acceptance, and Git boundaries remain in the contract and skills.
+
+External vault resources were not inspected. Their unchanged state relies on
+session evidence, a limitation disclosed before acceptance.

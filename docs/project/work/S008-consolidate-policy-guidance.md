@@ -1,8 +1,7 @@
 ---
 id: S008
-status: Review
+status: Done
 parent: B006
-blocked_by: Representative comparison and acceptance pending.
 ---
 
 # Consolidate repeated authority and acceptance guidance
@@ -62,13 +61,17 @@ undo their results. No completion dependency is required merely for file overlap
 
 ## Review
 
-The contract retains governing authority and timing rules. Development, review,
-documentation, and project-context now refer to those rules rather than repeating
-full procedures. Local reminders remain where they explain activity-specific
-stopping points. The brief-review recording conflict was also clarified.
+Accepted under the user's explicit delegation after correcting the grant-scope
+finding. The contract now requires session grants to cover the current project
+and work and requires clarification when grant scope or status is unclear.
+The corrected text was reread before acceptance.
 
-The user approved the simplification and subsequent documentation maintenance.
-A complete criterion-by-criterion comparison, including the representative
-requests and preserved exceptions, has not been recorded. Final acceptance of
-this slice remains open. The later opt-in validation rule is a separate user
-choice, not evidence that this slice preserved every prior behaviour.
+The preceding written review covered manual-first, approved-edit, pending-review,
+interim-recording, delegated-acceptance, and Git paths. Governing rules remain in
+the contract; skills retain activity-specific procedures and stopping points.
+The grant-scope correction resolves the identified preservation gap.
+
+The combined commit also contains separately authorized changes, including
+opt-in validation and readable item names. Those are distinct scope decisions,
+not unintended changes attributed to consolidation. The review does not claim
+runtime model compliance. No new tests or validation commands were run.

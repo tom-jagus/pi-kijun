@@ -1,8 +1,7 @@
 ---
 id: S007
-status: Review
+status: Done
 parent: B005
-blocked_by: Final comparison and acceptance pending.
 ---
 
 # Remove vault-specific instructions and routing
@@ -50,12 +49,11 @@ preserving repository documentation behaviour and general authority boundaries.
 
 ## Review
 
-Vault-specific guidance was removed from the contract, documentation and
-development skills, and workflow guide. The earlier repository search found no
-active vault references in those instructions. Actual vault resources were not
-inspected or modified.
+The user explicitly accepted the implementation after the criterion-by-criterion
+review. Vault guidance and routing are absent from active instructions; remaining
+mentions describe work records. Repository documentation conventions and general
+authority boundaries remain intact. No replacement note-taking guidance was added.
 
-The user approved the removal and subsequent documentation maintenance. Final
-acceptance of the result and the full comparison against the criteria have not
-been recorded. The existing checklist also calls for checks not repeated during
-this documentation update; those are not assumed to pass.
+External vault resources were not inspected. Their unchanged state relies on the
+session record, a limit disclosed before acceptance. No new tests or validation
+commands were run for closure; unchecked tasks do not represent failed criteria.

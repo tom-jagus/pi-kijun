@@ -1,7 +1,6 @@
 ---
 id: B006
-status: In progress
-blocked_by: Slice 8 review pending.
+status: Done
 ---
 
 # Maintainable policy guidance
@@ -39,3 +38,12 @@ evaluation suite.
   linked references, without searching unrelated skills for essential rules.
 - The result identifies the material duplication removed and any deliberately
   retained repetition so the user can assess the trade-off.
+
+## Review
+
+The user accepted the brief after review of its outcome criteria. The contract
+holds governing authority and timing rules; affected skills refer to those rules
+and retain activity-specific steps. The workflow guide explains their use.
+Manual-first development, grant scope, acceptance, interim recording, and Git
+authority remain in the written guidance. The review assessed the instructions,
+not whether a model follows them in every session.

@@ -59,8 +59,10 @@ clear benefit. Skills guide behavior, not technical enforcement.
   configuration, generated code, `AGENTS.md`, skills, and prompt templates need
   explicit Pi-edit approval, regardless of extension. A request to implement or
   fix alone is not approval. If a request for Pi to write files leaves the grant
-  unclear, ask for bounded approval. Grants cover only their stated work; session
-  grants expire with the session and can be revoked. They never grant Git rights.
+  unclear, ask for bounded approval. Grants cover only their stated work. Session
+  grants must cover the current project and work, expire with the session, and
+  can be revoked. Ask if a grant's scope or status is unclear. Grants never
+  authorize Git mutations.
 - **Documentation and records:** Direct requests permit necessary ordinary
   documentation and record edits without separate approval. Discussion and
   status reporting remain read-only. For implementation, wait for user or
