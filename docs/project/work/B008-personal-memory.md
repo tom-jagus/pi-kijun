@@ -1,6 +1,6 @@
 ---
 id: B008
-status: To do
+status: In progress
 ---
 
 # Curated personal memory

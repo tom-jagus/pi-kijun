@@ -1,6 +1,6 @@
 ---
 id: S011
-status: To do
+status: Done
 parent: B008
 ---
 
@@ -47,4 +47,15 @@ and maintain one private Markdown memory file without an extension.
 - [ ] Add the global reminder, skill, and necessary resource discovery changes.
 - [ ] Demonstrate representative cases with synthetic content and present the
   result for acceptance, including privacy and behavioral limitations.
-- [ ] After acceptance, update relevant documentation and records.
+- [x] After acceptance, update relevant documentation and records.
+
+## Review
+
+Accepted under the user's delegated conditional acceptance. Global guidance,
+private-file behavior, approval boundaries, and privacy limitations are present
+in the contract and skill. The user reported that Pi loaded and used the skill
+and that a missing memory file was reported. Conversation examples covered
+explicit reading, proposed changes, and approved changes using real memory, not
+synthetic content. An isolated setup check linked the skill in an alternate
+agent directory without creating memory; a conflicting resource was preserved
+and prevented link creation. These observations do not guarantee model behavior.

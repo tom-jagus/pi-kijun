@@ -13,7 +13,7 @@ Kijun. To activate it, run this from the repository root:
 ./setup.sh
 ```
 
-The script links Kijun's `AGENTS.md`, ten skills, and the `content-reviewer`
+The script links Kijun's `AGENTS.md`, eleven skills, and the `content-reviewer`
 agent definition into `${PI_CODING_AGENT_DIR:-$HOME/.pi/agent}`. It skips links
 already applied and refuses collisions or duplicate skill names under
 `~/.agents/skills/`.
@@ -40,6 +40,20 @@ an additional approval exchange. Git mutations always need a specific request.
 Tests, builds, linters, formatters, and validation scripts run only when you
 request or authorize them. Pi still inspects changes and reports missing evidence.
 Relevant skills supply guidance on demand; no special command is required.
+
+### Personal memory
+
+Personal memory is an optional Markdown file at `~/.pi/agent/memory.md`. Pi may
+read it when personal context is useful, or when you ask. You can edit it
+manually or approve a specific addition, correction, or deletion proposed by Pi.
+Setup does not create or manage this file. The same path is used when
+`PI_CODING_AGENT_DIR` selects another agent directory.
+
+Reading memory can send the whole file to the configured model provider and
+retain it in session history. Removing an entry does not erase earlier session,
+provider, or backup copies. Keep private data out of this repository and choose
+your own backup approach. Instructions guide the model but do not guarantee it
+will read memory when relevant or enforce access restrictions.
 
 Brainstorming develops the project charter and briefs, or suggests worthwhile
 improvements when the next step is unclear. Suggestions do not automatically

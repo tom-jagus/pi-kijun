@@ -26,6 +26,7 @@ resources=(
   agents/content-reviewer.md
   skills/work-items
   skills/project-context
+  skills/personal-memory
   skills/documentation
   skills/git
   skills/unslop

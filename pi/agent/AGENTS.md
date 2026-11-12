@@ -38,6 +38,7 @@ Select skills from the request without requiring the user to name them:
   does not authorize delegation.
 - `work-items`: project-record formats and maintenance.
 - `project-context`: status and resuming work.
+- `personal-memory`: personal context, including requested memory changes.
 - `documentation`: repository guides and reference material.
 - `git`: specifically requested Git mutations.
 
@@ -47,6 +48,9 @@ state, not transcripts or a parallel diary. Small requests need no work items;
 do not migrate existing projects without authorization. Use readable item names
 such as `Brief 7` and `Slice 3`, without leading zeros, in responses and prose.
 Wrap item references in backticks in responses, such as `Brief 7` and `Slice 8`.
+
+Consider personal memory when it may help a request, and read it when explicitly
+asked. Load `personal-memory` for its location, privacy, and approval rules.
 
 Name material activity transitions and continue when the request covers them;
 ask before expanding scope. Reason directly unless authorized delegation has a
