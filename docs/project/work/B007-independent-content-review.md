@@ -1,6 +1,6 @@
 ---
 id: B007
-status: Review
+status: Done
 ---
 
 # Independent content review
@@ -78,7 +78,7 @@ finding, narrowed another to missing reader guidance, and withdrew an
 audience-dependent finding. The exchange stopped after two turns. Independent
 content review found no material findings in the modified integration guidance.
 
-The result remains in Review, not accepted as complete. Unresolved disagreement
-at the invocation limit, failed or cancelled review handling, and a complete
-effective-tool audit remain unverified in S010. The combined outcome still needs
-final assessment against this brief's criteria.
+The user accepted the implementation after extended practical use and chose
+to close this brief and S010. Unresolved disagreement at the invocation limit,
+failed or cancelled review handling, and a complete effective-tool audit remain
+unverified. Acceptance does not turn those missing checks into verified results.

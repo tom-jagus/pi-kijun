@@ -1,7 +1,6 @@
 ---
 id: B008
-status: Draft
-blocked_by: Storage, loading, and ChatGPT migration design remain undecided.
+status: To do
 ---
 
 # Curated personal memory
@@ -13,8 +12,10 @@ repeated explanation across sessions without expanding the global operating
 contract into a personal profile. Include a reviewed migration of useful
 information from the user's existing ChatGPT instructions and memories.
 
-The direction is agreed. Storage, loading, update mechanics, and migration need
-a dedicated design discussion before implementation or slice refinement.
+Use one private Markdown file alongside Pi's user resources, short global
+instructions, and an on-demand `personal-memory` skill. The agent reads memory
+when personal context may help or when explicitly asked. Backup remains a
+separate decision.
 
 ## Why
 
@@ -31,16 +32,21 @@ conversation archive, or a competing source of project decisions.
   procedures retain their existing homes.
 - Memory cannot override applicable instructions, grant authority, accept work,
   or turn an inferred preference into an established user decision.
-- Memory additions, corrections, and deletions require explicit user approval.
-  Automatic extraction or proposals must not silently change active memory.
-- Keep personal content and raw ChatGPT exports outside the tracked Kijun
-  repository. Kijun may own the mechanism and documentation, not the private
-  dataset. Choose private storage, backup, and any versioning separately.
+- The agent may propose useful additions or corrections and act on requested
+  changes. Additions, corrections, and deletions require explicit user approval;
+  an explicit request specifying the change provides that approval. Proposals
+  must not silently change active memory.
+- Keep the personal Markdown file under `~/.pi/agent` and personal content and
+  raw ChatGPT exports outside the tracked Kijun repository. Kijun owns guidance,
+  not the private dataset. Backup and any versioning remain undecided.
+- Use short global instructions and a `personal-memory` skill, not an extension
+  or automatic injection. The whole file enters context when read; instructions
+  and skills guide behavior but do not enforce it.
 - Review supplied ChatGPT material for relevance, duplication, conflicts,
   sensitivity, and age. Distinguish user statements from model inferences;
   proposed imports are not automatically active instructions or memories.
-- Do not import credentials or assume all personal information should be sent
-  to every model provider. Define what loads and when as part of the design.
+- Do not import credentials. A read can expose the whole file to the configured
+  model provider and retain its contents in session history.
 - Do not promise identical model behavior. The outcome is less repetition and
   more consistent use of relevant context, not deterministic compliance.
 - Scheduling, messaging, portfolio reviews, research digests, and content
@@ -48,13 +54,11 @@ conversation archive, or a competing source of project decisions.
 
 ## Acceptance criteria
 
-These criteria are draft requirements for the design discussion, not an
-implementation plan or authorization to change behavior files.
-
 - A fresh session can use approved personal context without putting that
   content in the global operating contract or requiring manual repetition.
-- The user can inspect the active memory, identify its source, correct or
-  remove entries, and understand when changes affect subsequent requests.
+- The user can inspect and edit active memory, identify sources where useful,
+  correct or remove entries, and understand the effect on current and future
+  sessions.
 - An unapproved proposal does not affect active memory. Conflicts with current
   instructions or newer user statements are surfaced rather than silently
   resolved in favor of stored memory.
@@ -70,21 +74,14 @@ implementation plan or authorization to change behavior files.
 
 ## Open questions
 
-- Where should private memory live, and how should it be backed up or versioned?
-- Which small core, if any, loads in every session, and how is other context
-  selected? Is an extension justified or is explicit file loading sufficient?
-- How are approved entries distinguished from suggestions, and what provenance
-  and freshness information is useful without creating a maintenance burden?
-- How do corrections, deletion, concurrent sessions, and conflicting entries
-  affect active and future sessions?
-- Which ChatGPT material will the user supply, in what format, and what should
-  be excluded before the agent reads it? No exports have been inspected yet.
-- How can usefulness and context overhead be demonstrated on representative
-  sessions while preserving the existing authority boundaries?
+- Which backup and recovery approach should the user choose, if any?
+- Which sanitized ChatGPT sample will the user supply, and in what format?
+  No exports have been inspected yet.
 
 ## Risks
 
 Incorrect or outdated memories can influence later work. Keep the store small,
 make changes reviewable, and settle conflict and correction behavior before
-activation. Sensitive information may reach a configured model provider when
-loaded; agree the loading and privacy policy before importing personal data.
+activation. Sensitive information may reach a configured model provider and
+remain in session history when loaded. Deleting an entry does not erase copies
+in previous sessions or backups.

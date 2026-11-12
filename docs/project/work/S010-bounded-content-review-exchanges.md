@@ -1,6 +1,6 @@
 ---
 id: S010
-status: Review
+status: Done
 parent: B007
 depends_on:
   - S009
@@ -98,8 +98,8 @@ the modified agent definition, delegation guide, and dependency guide found no
 material findings. `git diff --check` passed. The three-turn limit is agent
 guidance, not runtime enforcement.
 
-The result remains in Review pending implementation acceptance and the remaining
-checks: unresolved disagreement at the invocation limit, a failed or cancelled
-invocation reported as incomplete, and a complete audit of the effective
-read-only tools. These unverified cases are not passes. No completion acceptance
-is recorded.
+The user accepted the implementation after extended practical use and chose to
+close the slice as it stands. Unresolved disagreement at the invocation limit,
+a failed or cancelled invocation reported as incomplete, and a complete audit of
+the effective read-only tools remain unverified. These unverified cases are not
+passes.

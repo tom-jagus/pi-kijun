@@ -9,8 +9,9 @@
 | [Slice 5](work/S005-requested-session-handoffs.md) | Support requested handoff capture and recovery. | To do | Handoff approach awaits discovery and user selection. |
 | [Brief 4](work/B004-read-only-installation-check.md) | Diagnose Kijun activation without changes. | To do | None |
 | [Slice 6](work/S006-read-only-setup-check.md) | Add a read-only setup diagnostic mode. | To do | None |
-| [Brief 7](work/B007-independent-content-review.md) | Obtain independent content review without manual copying. | Review | Final assessment and remaining Slice 10 checks pending. |
-| [Slice 10](work/S010-bounded-content-review-exchanges.md) | Integrate bounded reviewer exchanges. | Review | Tool audit, invocation-limit disagreement, and failure handling unverified. |
-| [Brief 8](work/B008-personal-memory.md) | Retain approved personal context across sessions. | Draft | Storage, loading, and ChatGPT migration design remain undecided. |
+| [Brief 8](work/B008-personal-memory.md) | Retain approved personal context across sessions. | To do | None |
+| [Slice 11](work/S011-personal-memory-guidance.md) | Support on-demand personal memory. | To do | None |
+| [Slice 12](work/S012-personal-memory-backup-discovery.md) | Recommend a personal memory backup approach. | To do | None |
+| [Slice 13](work/S013-reviewed-memory-migration.md) | Review a personal memory migration. | To do | Slice 11 and a sanitized user-supplied sample. |
 
 Completed items remain in [work/](work/).
